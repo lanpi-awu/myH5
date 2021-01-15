@@ -19,12 +19,19 @@ a{
     animation: season2 10s infinite;
 }
 g{
-    background-color: yellow;
+    color: yellow;
     animation: season3 10s infinite;
+    background-image: url("../images/1.jpg");
+    background-size: 100% 100%;
 }
 e{
     background-color: deepskyblue;
     animation: season4 10s infinite;
+}
+s{
+    font-size: 36px;
+    display:block;
+    animation: season5 10s infinite;
 }
 @keyframes season1 {
     0%{opacity: 0}
@@ -55,6 +62,14 @@ e{
     0%{opacity: 0}
     80%{opacity: 0}
     90%{opacity: 100}
+    100%{opacity: 0}
+
+}
+@keyframes season5 {
+    0%{opacity: 0}
+    85%{opacity: 0}
+    90%{opacity: 100}
+    95%{opacity: 0}
     100%{opacity: 0}
 
 }
