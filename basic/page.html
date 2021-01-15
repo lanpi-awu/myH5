@@ -5,9 +5,26 @@
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="css/page.css" />
 
+    <script>
+        function audioautoplay(id) {
+            var audio = document.getElementById(id);
+            audio.play();
+            document.addEventListener("WeixinJSBrideReady", function () {
+                audio.play();
+            }, false)
+            document.addEventListener("YixinJSBrideReady", function () {
+                audio.play();
+            }, false)
+
+
+        }
+    </script>
 </head>
-<body>
-<pq>春</pq>
+<body onload="audioautoplay('少年')">
+
+<audio id="少年" src="./wav/少年.mp3" preload="auto" autoplay="autoplay"></audio>
+
+    <pq>春</pq>
 <a>夏</a>
 <g>秋</g>
 <e>冬
