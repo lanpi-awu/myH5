@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>计算价格</title>
+    <style>
+        body{
+            font-size: 100px;
+        }
+    </style>
     <script>
         var price,priceoff,password;
-        price=prompt("请输入当日的价格");
+        function isinteger(obj) {
+            return obj%1 === 0
+
+        }
+        document.write("欢迎光临奶茶店")
+        price=prompt("请输入当日奶茶的价格");
         if (isNaN(price)) {
             alert("输数字不会？滚吧");
             close();
@@ -16,34 +26,42 @@
                 close();
             }
         }
-        priceoff=prompt("当日的折扣为（0.1-0.9）");
+        priceoff=prompt("你需要的杯数为（第二杯半价）");
         if (isNaN(priceoff)) {
             alert("输数字不会？滚吧");
             close();
         }
-        else{
-            if (priceoff>1) {
-
-                alert("不识字？你家折扣长这样?");
+        else if(priceoff<1) {
+                alert("来捣乱的？？");
                 close();
             }
-        }
-
-        password=prompt("请输入支付密码");
-        if (isNaN(password)) {
-            alert("输数字不会？滚吧");
-            close();
-        }
-        if (password==123456789) {
-            alert("密码正确，你真棒");
-            price=price*priceoff;
-            alert("价格为"+price);
-        }
-        else if(password==123456){
-            alert("接近了哦，小笨蛋");
+        else if(isinteger(priceoff)){
+            password=prompt("请输入支付密码");
+            if (isNaN(password)) {
+                alert("输数字不会？滚吧");
+                close();
+            }
+            if (password==123456789) {
+                alert("密码正确，你真棒");
+                if(priceoff %2==0){
+                    price=(priceoff/2)*(price*1.5);
+                    alert("价格为"+price);
+                }
+                if(priceoff %2==1){
+                    price=(priceoff/2)*(price*1.5)+(price*0.25);
+                    alert("价格为"+price);
+                }
+            }
+            else if(password==123456){
+                alert("接近了哦，小笨蛋");
+            }
+            else {
+                alert("密码错误，滚吧");
+            }
+            alert("欢迎下次光临")
         }
         else {
-            alert("密码错误，滚吧");
+            alert("你能点小数杯？")
         }
     </script>
 </head>
