@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试今日运势</title>
+    <script>
+        var a=Math.random();
+        if (a>0.95){
+            document.write("今日运势上上签,直接拉满，少年你就是天选之子");
+            document.write("<img src=\"images/13.png\"/>")
+        }
+        else{
+            document.write("今日运势一般般"+"<br>");
+            document.write();
+            a=Math.floor(a*6)+1;
+            guess();
+            guess();
+            document.write("<img src=\"images/"+a+".png\"/>")
+        }
+        function guess() {
+            var b;
+            b=prompt("猜猜你骰子的点数（1-6）");
+            if(b>a){
+                document.write("你猜大了"+"<br>");
+            }
+            else if(b<a){
+                document.write("你猜小了"+"<br>");
+            }
+            else{
+                alert("你猜中了");
+
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
